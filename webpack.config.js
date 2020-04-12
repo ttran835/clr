@@ -30,6 +30,10 @@ module.exports = (isDevelopment) => {
 
   return {
     entry: ['@babel/polyfill', `${SRC_DIR}/index.jsx`],
+    output: {
+      path: path.resolve(__dirname, DIST_DIR + '/assets'),
+      filename: 'bundle.js',
+    },
     stats: { warnings: false },
     module: {
       rules: [
@@ -135,10 +139,6 @@ module.exports = (isDevelopment) => {
           },
         },
       ],
-    },
-    output: {
-      path: path.resolve(__dirname, DIST_DIR + '/assets'),
-      filename: 'bundle.js',
     },
     performance: {
       hints: 'warning',
