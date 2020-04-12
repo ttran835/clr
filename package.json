@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "clr-site-for-gifting",
   "main": "index.js",
+  "engines": {
+    "node": ">= 10.16.3",
+    "npm": ">= 6.9.0"
+  },
   "scripts": {
     "start": "node server/index.js",
     "heroku-prebuild": "npm install && npm install --dev",
