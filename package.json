@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/index.js",
     "heroku-prebuild": "npm install && npm install --dev",
-    "heroku-postbuild": "webpack --config webpack.product.js",
+    "heroku-postbuild": "webpack --config webpack.prod.js",
     "build": "webpack -w --config webpack.dev.js",
     "nodemon": "nodemon server/index.js"
   },
