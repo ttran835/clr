@@ -23,7 +23,7 @@ module.exports = (isDevelopment) => {
 
   const localEnvConfigs = dotenv.config({ path: localDevEnv }).parsed;
 
-  const fileEnv = isDevelopment ? productionEnv : localEnvConfigs;
+  const fileEnv = !isDevelopment ? productionEnv : localEnvConfigs;
 
   const envKeys = Object.keys(fileEnv).reduce((prev, next) => {
     prev[`process.env.${next}`] = JSON.stringify(fileEnv[next]);
