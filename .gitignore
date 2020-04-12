@@ -1,0 +1,19 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# testing
+/coverage
+
+# production
+/build
+/client/dist/bundle.js
+/client/dist/bundle.js.gz
+/client/dist/bundle.js.map
+
+# misc
+.DS_Store
+.env
+
+npm-debug.log*
