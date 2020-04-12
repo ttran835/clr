@@ -17,7 +17,9 @@ module.exports = (isDevelopment) => {
   const currentPath = path.join(__dirname);
   const localDevEnv = currentPath + '/.env';
 
-  const productionEnv = {};
+  const productionEnv = {
+    PORT: process.env.PORT,
+  };
 
   const localEnvConfigs = dotenv.config({ path: localDevEnv }).parsed;
 
