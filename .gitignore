@@ -8,7 +8,7 @@ node_modules
 
 # production
 /build
-/client/dist/assets
+/client/dist/
 /client/dist/bundle.js.gz
 /client/dist/bundle.js.map
 

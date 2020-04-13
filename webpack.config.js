@@ -8,7 +8,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const LodashPlugin = require('lodash-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 
@@ -31,10 +31,15 @@ module.exports = (isDevelopment) => {
   }, {});
 
   return {
+    devServer: {
+      contentBase: path.join(__dirname, 'client'),
+      port: 3000,
+      host: 'localhost',
+    },
     entry: ['@babel/polyfill', `${SRC_DIR}/index.jsx`],
     output: {
-      path: path.resolve(__dirname, DIST_DIR + '/assets'),
-      filename: 'bundle.js',
+      path: path.resolve(__dirname, DIST_DIR),
+      filename: '[name].[hash].js',
     },
     stats: { warnings: false },
     module: {
@@ -164,7 +169,6 @@ module.exports = (isDevelopment) => {
         Promise: 'es6-promise-promise',
       }),
       new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
         openAnalyzer: false,
       }),
       new CleanWebpackPlugin({
@@ -172,6 +176,10 @@ module.exports = (isDevelopment) => {
         watch: false,
       }),
       new LodashPlugin(),
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'client/htmlTemplate/template.html'),
+        filename: 'index.html',
+      }),
     ],
     optimization: {
       minimizer: [
@@ -179,6 +187,7 @@ module.exports = (isDevelopment) => {
           terserOptions: {
             ecma: 6,
             compress: true,
+            cache: false,
             output: {
               comments: false,
               beautify: false,
@@ -189,6 +198,9 @@ module.exports = (isDevelopment) => {
       concatenateModules: true,
     },
     resolve: {
+      alias: {
+        Utils: path.resolve(__dirname, `${SRC_DIR}/Utils`),
+      },
       extensions: ['.jsx', '.js'],
     },
   };
