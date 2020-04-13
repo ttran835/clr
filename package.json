@@ -1,6 +1,6 @@
 {
   "name": "clr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "clr-site-for-gifting",
   "main": "index.js",
   "engines": {
@@ -38,6 +38,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "nodemon": "^1.19.1",
     "path": "^0.12.7",
+    "pg": "^8.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
