@@ -34,9 +34,9 @@ sequelize
   .authenticate()
   .then(() => console.log('Conected to DB'))
   .catch((err) => console.error(err));
-sequelize
-  .sync()
-  .then(() => console.log('App synced with all tables.'))
-  .catch((err) => console.error(err));
+// sequelize
+//   .sync()
+//   .then(() => console.log('App synced with all tables.'))
+//   .catch((err) => console.error(err));
 
 module.exports = { sequelize };
