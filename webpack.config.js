@@ -9,6 +9,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const LodashPlugin = require('lodash-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 
@@ -31,15 +32,16 @@ module.exports = (isDevelopment) => {
   }, {});
 
   return {
-    devServer: {
-      contentBase: path.join(__dirname, 'client'),
-      port: 3000,
-      host: 'localhost',
-    },
     entry: ['@babel/polyfill', `${SRC_DIR}/index.jsx`],
     output: {
-      path: path.resolve(__dirname, DIST_DIR),
+      path: path.resolve(__dirname, DIST_DIR + '/'),
       filename: '[name].[hash].js',
+    },
+    devServer: {
+      contentBase: path.join(__dirname, DIST_DIR),
+      historyApiFallback: true,
+      port: 8080,
+      host: 'localhost',
     },
     stats: { warnings: false },
     module: {
@@ -177,8 +179,8 @@ module.exports = (isDevelopment) => {
       }),
       new LodashPlugin(),
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'client/htmlTemplate/template.html'),
         filename: 'index.html',
+        template: path.join(__dirname, 'htmlTemplate/template.html'),
       }),
     ],
     optimization: {
