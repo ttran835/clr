@@ -1,7 +1,6 @@
 import { createContext, useState, useContext } from 'react';
 
 /**
- * @class
  * @classdesc Create context for components index
  * @param {Object} initialState
  * @return {Object} returns with initial state for Component

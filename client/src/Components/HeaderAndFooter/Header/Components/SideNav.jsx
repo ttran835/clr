@@ -3,7 +3,8 @@ import { MDBIcon, MDBSideNavNav, MDBSideNav, MDBContainer } from 'mdbreact';
 import SideNavList from './SideNavList';
 import actions from '../actions';
 
-import clrIcon from '../../../imgs/clr.jpg';
+import daisyField from 'Imgs/daisy-field.jpg';
+import clrIcon from 'Imgs/clr.jpg';
 
 export default function SideNav(props) {
   const { isOpen, links } = props.state;
@@ -12,13 +13,14 @@ export default function SideNav(props) {
       <MDBSideNav
         slim
         fixed
+        bg={daisyField}
         mask="rgba-pink-light"
         triggerOpening={isOpen}
         breakWidth={1}
         className="sn-bg-1">
         <li>
           <div className="logo-wrapper sn-ad-avatar-wrapper">
-            <a href="#!">
+            <a href="/">
               <img alt="" src={clrIcon} className="rounded-circle" />
               <span>Chelsea L Russell</span>
             </a>

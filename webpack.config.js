@@ -20,6 +20,7 @@ module.exports = (isDevelopment) => {
 
   const productionEnv = {
     PORT: process.env.PORT,
+    SITE_PW: process.env.SITE_PW,
   };
 
   const localEnvConfigs = dotenv.config({ path: localDevEnv }).parsed;
@@ -177,10 +178,11 @@ module.exports = (isDevelopment) => {
         verbose: false,
         watch: false,
       }),
+      new MiniCssExtractPlugin(),
       new LodashPlugin(),
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        template: path.join(__dirname, 'htmlTemplate/template.html'),
+        template: path.join(__dirname, 'client/htmlTemplate/template.html'),
       }),
     ],
     optimization: {
@@ -202,6 +204,7 @@ module.exports = (isDevelopment) => {
     resolve: {
       alias: {
         Utils: path.resolve(__dirname, `${SRC_DIR}/Utils`),
+        Imgs: path.resolve(__dirname, `${SRC_DIR}/imgs`),
       },
       extensions: ['.jsx', '.js'],
     },

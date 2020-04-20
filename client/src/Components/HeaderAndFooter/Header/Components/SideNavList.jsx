@@ -8,6 +8,7 @@ export default function SideNavList(props) {
     const { icon, text } = link;
     return (
       <MDBSideNavLink
+        topLevel
         key={key}
         shortcut={<MDBIcon icon={icon} />}
         className="text-capitalize font-weight-bold">
