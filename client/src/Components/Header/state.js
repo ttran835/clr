@@ -1,6 +1,10 @@
 const initialState = {
   isOpen: false,
-  links: ['Home', 'Memories', 'About Chelsea', 'Place We visit'],
+  links: [
+    { icon: 'address-card', text: 'About Chelsea' },
+    { icon: 'memory', text: 'Memories' },
+    { icon: 'map-marked-alt', text: 'Places We visited' },
+  ],
 };
 
 export default initialState;
