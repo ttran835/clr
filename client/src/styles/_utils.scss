@@ -1,0 +1,89 @@
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+      @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+      @content;
+  }
+}
+@mixin tablet-only {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$tablet-pro-width - 1px} ) {
+      @content;
+  }
+}
+@mixin tablet-lg {
+  @media (min-width: #{$tablet-pro-width}) {
+      @content;
+  }
+}
+@mixin tablet-lg-only {
+  @media (min-width: #{$tablet-pro-width}) and (max-width: #{$desktop-width - 1px} ) {
+      @content;
+  }
+}
+@mixin all-tablets-only {
+  @media (min-width :#{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+      @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+      @content;
+  }
+}
+@mixin desktop-only {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$desktop-xl-wdith - 1px} ) {
+      @content;
+  }
+}
+@mixin desktop-lg {
+  @media (min-width: #{$deskt-xl-width}) {
+      @content;
+  }
+}
+@mixin desktop-xtra-lg {
+  @media (min-width: #{$deskt-xtral-width}) {
+      @content;
+  }
+}
+
+@mixin backgroundUrl($backgroundUrl) {
+  background-image: url($backgroundUrl);
+}
+
+@mixin backgroundImg($backgroundUrl) {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include backgroundUrl($backgroundUrl);
+}
+
+@mixin font-sizes($header) {
+  @if $header == 'header-1' {
+      font-size: $h1-mobile;
+      @include tablet {
+          font-size: $h1-tablet;
+      }
+      @include desktop {
+          font-size: $h1-desktop;
+      }
+  } @else if $header == 'header-2' {
+      font-size: $h2-mobile;
+      @include tablet {
+          font-size: $h2-tablet;
+      }
+      @include desktop {
+          font-size: $h2-desktop;
+      }
+  } @else if $header == 'header-3' {
+      font-size: $h3-mobile;
+      @include tablet {
+          font-size: $h3-tablet;
+      }
+      @include desktop {
+          font-size: $h3-desktop;
+      }
+  }
+}

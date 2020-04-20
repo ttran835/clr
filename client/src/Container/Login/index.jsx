@@ -7,10 +7,10 @@ import actions from './actions';
 export default function Login(props) {
   const context = new ContextCreator(initialState);
   const { Context, createStateAndSetState } = context;
-  const { state, dispatch, onChangeDispatch } = createStateAndSetState();
+  const { state, dispatch } = createStateAndSetState();
 
   return (
-    <Context.Provider value={{ state, dispatch, onChangeDispatch, actions }}>
+    <Context.Provider value={{ state, dispatch, actions }}>
       <Context.Consumer>
         {(values) => {
           return <Components {...values} />;

@@ -1,6 +1,6 @@
 {
   "name": "clr",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "clr-site-for-gifting",
   "private": true,
   "engines": {
@@ -13,6 +13,7 @@
     "heroku-prebuild": "npm install && npm install --dev",
     "heroku-postbuild": "webpack --config webpack.prod.js",
     "build": "webpack -w --config webpack.dev.js",
+    "scss-dev": "node-sass --watch client/src/styles -o client/dist/assets/styles/",
     "nodemon": "nodemon server/index.js"
   },
   "repository": {

@@ -4,8 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 /* Components */
 
 // Header and Footer
-import Header from '../HeaderAndFooter/Header';
-import Footer from '../HeaderAndFooter/Footer';
+import Header from '../../Components/HeaderAndFooter/Header';
+import Footer from '../../Components/HeaderAndFooter/Footer';
 
 // Login
 import Login from '../Login';
@@ -16,11 +16,13 @@ export default function Components(props) {
       <Route path="/">
         <Header />
       </Route>
-      <Switch>
-        <Route exact path="/">
-          <Login />
-        </Route>
-      </Switch>
+      <div className="content-wrapper">
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+        </Switch>
+      </div>
       <Route path="/">
         <Footer />
       </Route>

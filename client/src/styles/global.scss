@@ -1,0 +1,14 @@
+#app {
+  position: relative;
+  min-height: 100vh;
+  margin-top: 3rem;
+}
+
+.content-wrapper {
+  @include mobile {
+    width: 85vw;
+    position: relative;
+    right: 0;
+    margin-left: 15vw;
+  }
+}
