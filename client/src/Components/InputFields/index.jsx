@@ -3,10 +3,11 @@ import { MDBInput } from 'mdbreact';
 
 /**
  * Renders input component
- * @param {Props} props
+ * @param {Object} props
+ * @returns {Object} [value, input]
  * @example {className, name, icon, hint, id, size}
  */
-export default function createInput({ options }) {
+export default function createInput(options) {
   const [value, setValue] = useState('');
   const { className, name, icon, hint, id, size, type } = options || {};
   const input = (

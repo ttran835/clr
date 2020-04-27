@@ -9,6 +9,7 @@ import Footer from '../../Components/HeaderAndFooter/Footer';
 
 // Login
 import Login from '../Login';
+import About from '../About';
 
 export default function Components(props) {
   return (
@@ -20,6 +21,9 @@ export default function Components(props) {
         <Switch>
           <Route exact path="/">
             <Login />
+          </Route>
+          <Route exact path="/about">
+            <About />
           </Route>
         </Switch>
       </div>

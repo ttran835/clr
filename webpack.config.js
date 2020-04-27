@@ -205,6 +205,7 @@ module.exports = (isDevelopment) => {
       alias: {
         Utils: path.resolve(__dirname, `${SRC_DIR}/Utils`),
         Imgs: path.resolve(__dirname, `${SRC_DIR}/imgs`),
+        Components: path.resolve(__dirname, `${SRC_DIR}/Components`),
       },
       extensions: ['.jsx', '.js'],
     },

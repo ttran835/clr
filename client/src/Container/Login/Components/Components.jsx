@@ -1,11 +1,11 @@
 import React from 'react';
 import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
-import passwordInput from '../../InputFields';
+import passwordInput from '../../../Components/InputFields';
 
 import styles from '../styles/Login.module.scss';
 
 export default function Components(props) {
-  const [password, input] = passwordInput({ hint: 'Enter your secret phrase', name: 'Password' });
+  const [password, input] = passwordInput({ hint: 'Enter your secret phrase', name: 'Password', type: 'password' });
   console.log({ password });
   return (
     <MDBContainer>
