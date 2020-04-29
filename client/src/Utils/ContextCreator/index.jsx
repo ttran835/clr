@@ -16,8 +16,8 @@ export default class ContextCreator {
     const context = useContext(this.Context);
     const [state, setState] = useState(context);
 
-    const dispatch = (action) => {
-      return () => action(setState, state);
+    const dispatch = (action, ...args) => {
+      return () => action(setState, state, ...args);
     };
 
     return { state, dispatch };

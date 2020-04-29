@@ -14,12 +14,14 @@
   }
 }
 
-.clr__header1 {
-  @include mobile {
-    font-size: 1.5rem;
-  }
+.box-shadow1 {
+  box-shadow: $shadow-1;
 }
-.clr__p {
-  @include Montserrat;
-  font-size: 1rem;
+
+.box-shadow2 {
+  box-shadow: $shadow-2;
+}
+
+.box-shadow3 {
+  box-shadow: $hover-shadow;
 }

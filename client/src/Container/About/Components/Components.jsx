@@ -10,7 +10,7 @@ function TextInfo(props) {
     <Fragment>
       <MDBCol size="12" sm="8">
         <MDBAnimation type="fadeIn" duration="1000ms" delay="1s">
-          <h1 className="clr__header1 font-weight-bold pink-text">{title}</h1>
+          <h1 className="clr__header1 pink-text">{title}</h1>
           <p className="clr__p">{info}</p>
         </MDBAnimation>
       </MDBCol>
