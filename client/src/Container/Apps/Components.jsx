@@ -11,6 +11,7 @@ import Footer from '../../Components/HeaderAndFooter/Footer';
 import Login from '../Login';
 import About from '../About';
 import Mems from '../Mems';
+import GoogleMap from '../GoogleMap';
 
 export default function Components(props) {
   return (
@@ -28,6 +29,9 @@ export default function Components(props) {
           </Route>
           <Route exact path="/memories">
             <Mems />
+          </Route>
+          <Route exact path="/visited">
+            <GoogleMap />
           </Route>
         </Switch>
       </div>

@@ -1,6 +1,6 @@
 {
   "name": "clr",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "clr-site-for-gifting",
   "private": true,
   "engines": {
@@ -34,6 +34,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "file-loader": "^6.0.0",
+    "google-map-react": "^1.1.7",
     "helmet": "^3.22.0",
     "html-webpack-plugin": "^4.2.0",
     "lodash": "^4.17.15",
@@ -44,7 +45,6 @@
     "pg": "^8.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-google-maps": "^9.4.5",
     "react-helmet": "^6.0.0",
     "react-router-dom": "^5.1.2",
     "react-slick": "^0.24.0",

@@ -21,6 +21,7 @@ module.exports = (isDevelopment) => {
   const productionEnv = {
     PORT: process.env.PORT,
     SITE_PW: process.env.SITE_PW,
+    GOOGLE_MAP_API: process.env.GOOGLE_MAP_API,
   };
 
   const localEnvConfigs = dotenv.config({ path: localDevEnv }).parsed;
