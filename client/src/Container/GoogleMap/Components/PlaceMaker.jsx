@@ -4,7 +4,7 @@ import Place from './Place';
 import styles from '../styles/GoogleMaps.module.scss';
 
 export default function StoreMarker(props) {
-  const { placeId, dispatch, actions, showDetails } = props;
+  const { placeId, dispatch, actions } = props;
   const { showCardDetails } = actions;
   return (
     <div className={`${styles.mapMaker}`}>

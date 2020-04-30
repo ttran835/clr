@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import styles from '../styles/GoogleMaps.module.scss';
 import PlaceMaker from './PlaceMaker';
 
-const center = { lat: 33.8397379, lng: -118.3342397 };
+const center = { lat: 33.6700055, lng: -117.969478 };
 export default function Map(props) {
   const { places } = props.state;
   const { dispatch, actions } = props;

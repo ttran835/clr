@@ -5,12 +5,23 @@ $fall-back-fonts: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
   font-family: 'Montserrat', $fall-back-fonts;
 }
 
+@mixin Abril-Fatface {
+  font-family: 'Abril Fatface', $fall-back-fonts;
+}
+
 .clr__header1 {
   font-weight: 700 !important;
   @include mobile {
     font-size: 1.5rem;
   }
 }
+
+.clr__googleMapHeader2 {
+  @include Abril-Fatface;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
 .clr__p {
   @include Montserrat;
   font-size: 1rem;
@@ -18,5 +29,5 @@ $fall-back-fonts: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 
 .clr__intro-p {
   @include Montserrat;
-  font-size: .95rem;
+  font-size: 0.95rem;
 }

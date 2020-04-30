@@ -4,16 +4,16 @@ import { Route, Switch } from 'react-router-dom';
 /* Components */
 
 // Header and Footer
-import Header from '../../Components/HeaderAndFooter/Header';
-import Footer from '../../Components/HeaderAndFooter/Footer';
+import Header from '../../../Components/HeaderAndFooter/Header';
+import Footer from '../../../Components/HeaderAndFooter/Footer';
 
 // Login
-import Login from '../Login';
-import About from '../About';
-import Mems from '../Mems';
-import GoogleMap from '../GoogleMap';
+import Login from '../../Login';
+import About from '../../About';
+import Mems from '../../Mems';
+import GoogleMap from '../../GoogleMap';
 
-export default function Components(props) {
+export default function ChildComps(props) {
   return (
     <Fragment>
       <Route path="/">

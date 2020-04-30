@@ -5,10 +5,13 @@ import './styles/index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import {createBrowserHistory} from 'history';
 import Apps from './Container/Apps/Apps';
 
+const history = createBrowserHistory();
+
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter history={history}>
     <Apps />
   </BrowserRouter>,
   document.getElementById('app'),
