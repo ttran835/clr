@@ -39,12 +39,12 @@ module.exports = (isDevelopment) => {
       path: path.resolve(__dirname, DIST_DIR + '/'),
       filename: '[name].[hash].js',
     },
-    // devServer: {
-    //   contentBase: path.join(__dirname, DIST_DIR),
-    //   historyApiFallback: true,
-    //   port: 8080,
-    //   host: 'localhost',
-    // },
+    devServer: {
+      contentBase: path.join(__dirname, DIST_DIR),
+      historyApiFallback: true,
+      port: 8080,
+      host: 'localhost',
+    },
     stats: { warnings: false },
     module: {
       rules: [
@@ -172,9 +172,10 @@ module.exports = (isDevelopment) => {
       new webpack.ProvidePlugin({
         Promise: 'es6-promise-promise',
       }),
-      // new BundleAnalyzerPlugin({
-      //   openAnalyzer: false,
-      // }),
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false,
+        analyzerMode: 'static',
+      }),
       new CleanWebpackPlugin({
         verbose: false,
         watch: false,

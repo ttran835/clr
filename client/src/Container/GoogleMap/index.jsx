@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
+import { Helmet } from 'react-helmet';
 import Components from './Components/Components';
 import actions from './actions';
 import initializeState from './state';
@@ -10,5 +11,13 @@ export default function GoogleMap(props) {
     return () => action(setState, state, ...args);
   };
 
-  return <Components state={state} dispatch={dispatch} actions={actions} />;
+  return (
+    <Fragment>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Places we visited</title>
+      </Helmet>
+      <Components state={state} dispatch={dispatch} actions={actions} />
+    </Fragment>
+  );
 }

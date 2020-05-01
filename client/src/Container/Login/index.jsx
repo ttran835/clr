@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBAnimation } from 'mdbreact';
 import passwordInput from '../../Components/InputFields';
 
@@ -21,6 +22,10 @@ export default function Components(props) {
   });
   return (
     <MDBContainer>
+        <Helmet>
+        <meta charSet="utf-8" />
+        <title>Secret Login</title>
+      </Helmet>
       <MDBRow>
         <MDBCol size="12">
           <MDBAnimation type="fadeIn" duration="3000ms">

@@ -9,6 +9,7 @@ import Footer from '../../../Components/HeaderAndFooter/Footer';
 
 // Login
 import Login from '../../Login';
+import HomePage from '../../../Components/Home';
 import About from '../../About';
 import Mems from '../../Mems';
 import GoogleMap from '../../GoogleMap';
@@ -22,7 +23,7 @@ export default function ChildComps(props) {
       <div className="content-wrapper">
         <Switch>
           <Route exact path="/">
-            <Login />
+            <HomePage />
           </Route>
           <Route exact path="/about">
             <About />

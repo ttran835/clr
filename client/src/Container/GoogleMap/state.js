@@ -10,42 +10,47 @@ const initializeState = {
     {
       place: 'The Coffee Tale',
       placeImg: coffeeTale,
-      address: '2727 Maricopa St, Torrance, CA 90503',
+      description:
+        'This is where we first met. And I still remember how much you were talking. Omg lmao.',
       map: { lat: 33.734119, lng: -117.997034 },
       showDetails: false,
     },
     {
       place: 'Our first trip!',
       placeImg: seattleSkyline,
-      address: '22840 Hawthorne Blvd, Torrance, CA 90505',
+      description:
+        'I had such a great time with you in Seattle. I wish we could have stayed a bit longer, but I think that weekend was the perfect amount of time to do everything',
       map: { lat: 47.606209, lng: -122.332069 },
       showDetails: false,
     },
     {
       place: 'The most expensive place in the world!',
       placeImg: disney,
-      address: '22840 Hawthorne Blvd, Torrance, CA 90505',
+      description:
+        'I seriously do not like Disneyland, and you cannot change my mind!! It was okay. I had fun with you, its still Dland :(',
       map: { lat: 33.812092, lng: -117.9189769 },
       showDetails: false,
     },
     {
       place: 'First Christmas Dinner!',
       placeImg: ilCielo,
-      address: '22840 Hawthorne Blvd, Torrance, CA 90505',
+      description:
+        'This was such an amazing dining experience. I think this is where I was like. Aww I love this girl teehee.',
       map: { lat: 34.0719156, lng: -118.388428 },
       showDetails: false,
     },
     {
       place: 'Christmas Lights in Long beach',
       placeImg: lbLights,
-      address: '22840 Hawthorne Blvd, Torrance, CA 90505',
+      description:
+        'Remember how I was like, you need to bring a jacket, and comfortable shoes. Tsk tsk tsk',
       map: { lat: 33.754216, lng: -118.1229158 },
       showDetails: false,
     },
     {
       place: 'Feeding the homeless',
       placeImg: fullerton,
-      address: '22840 Hawthorne Blvd, Torrance, CA 90505',
+      description: 'This was the first that time we did something good together. I hope we can do this again!!',
       map: { lat: 33.866307, lng: -117.9242036 },
       showDetails: false,
     },

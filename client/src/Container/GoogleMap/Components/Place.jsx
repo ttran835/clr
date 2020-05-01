@@ -12,7 +12,7 @@ export default function Stores(props) {
       </div>
       <div className={`${styles.mapStoreInfo__textInfo} ml-2`}>
         <h2 className="clr__googleMapHeader2">{place}</h2>
-        <div className={`${styles.mapStoreInfo__address}`}>{description}</div>
+        <p className={`clr__p ${styles.mapStoreInfo__description}`}>{description}</p>
       </div>
       <div className={`${styles.mapStoreInfo__triangle}`}></div>
     </div>
