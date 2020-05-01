@@ -9,6 +9,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const LodashPlugin = require('lodash-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 
@@ -19,6 +20,8 @@ module.exports = (isDevelopment) => {
 
   const productionEnv = {
     PORT: process.env.PORT,
+    SITE_PW: process.env.SITE_PW,
+    GOOGLE_MAP_API: process.env.GOOGLE_MAP_API,
   };
 
   const localEnvConfigs = dotenv.config({ path: localDevEnv }).parsed;
@@ -31,15 +34,16 @@ module.exports = (isDevelopment) => {
   }, {});
 
   return {
-    devServer: {
-      contentBase: path.join(__dirname, 'client'),
-      port: 3000,
-      host: 'localhost',
-    },
     entry: ['@babel/polyfill', `${SRC_DIR}/index.jsx`],
     output: {
-      path: path.resolve(__dirname, DIST_DIR),
+      path: path.resolve(__dirname, DIST_DIR + '/'),
       filename: '[name].[hash].js',
+    },
+    devServer: {
+      contentBase: path.join(__dirname, DIST_DIR),
+      historyApiFallback: true,
+      port: 8080,
+      host: 'localhost',
     },
     stats: { warnings: false },
     module: {
@@ -170,15 +174,17 @@ module.exports = (isDevelopment) => {
       }),
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
+        analyzerMode: 'static',
       }),
       new CleanWebpackPlugin({
         verbose: false,
         watch: false,
       }),
+      new MiniCssExtractPlugin(),
       new LodashPlugin(),
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'client/htmlTemplate/template.html'),
         filename: 'index.html',
+        template: path.join(__dirname, 'client/htmlTemplate/template.html'),
       }),
     ],
     optimization: {
@@ -200,6 +206,8 @@ module.exports = (isDevelopment) => {
     resolve: {
       alias: {
         Utils: path.resolve(__dirname, `${SRC_DIR}/Utils`),
+        Imgs: path.resolve(__dirname, `${SRC_DIR}/imgs`),
+        Components: path.resolve(__dirname, `${SRC_DIR}/Components`),
       },
       extensions: ['.jsx', '.js'],
     },

@@ -20,7 +20,7 @@ const devDb = new Sequelize(
   },
 );
 
-const productionDb = new Sequelize(process.env.HEROKU_DB, {
+const productionDb = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
   dialectOptions: {
     ssl: true,

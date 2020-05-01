@@ -1,0 +1,19 @@
+@import '../../styles/vars';
+@import '../../styles/utils';
+.clrCard {
+  @include tablet-only {
+    overflow-y: scroll;
+  }
+}
+.clrCardBody {
+  position: absolute;
+  top: 0px;
+  background: #161515ed;
+  height: 100%;
+}
+
+.clrImgCardBtn {
+  position: absolute !important;
+  right: 10px;
+  top: 5px;
+}

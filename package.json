@@ -1,6 +1,6 @@
 {
   "name": "clr",
-  "version": "1.2.0",
+  "version": "1.6.0",
   "description": "clr-site-for-gifting",
   "private": true,
   "engines": {
@@ -8,11 +8,12 @@
     "npm": "6.9.0"
   },
   "scripts": {
+    "start:dev": "nodemon server/index.js & webpack -w --config webpack.dev.js & webpack-dev-server",
     "start": "node server/index.js",
     "heroku-prebuild": "npm install && npm install --dev",
     "heroku-postbuild": "webpack --config webpack.prod.js",
     "build": "webpack -w --config webpack.dev.js",
-    "test": "webpack -w --isDevelopment=true --config webpack.config.js --mode=development",
+    "scss-dev": "node-sass --watch client/src/styles -o client/dist/assets/styles/",
     "nodemon": "nodemon server/index.js"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "file-loader": "^6.0.0",
+    "google-map-react": "^1.1.7",
     "helmet": "^3.22.0",
     "html-webpack-plugin": "^4.2.0",
     "lodash": "^4.17.15",
@@ -43,7 +45,6 @@
     "pg": "^8.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-google-maps": "^9.4.5",
     "react-helmet": "^6.0.0",
     "react-router-dom": "^5.1.2",
     "react-slick": "^0.24.0",
@@ -77,6 +78,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
     "lodash-webpack-plugin": "^0.11.5",
+    "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^0.23.1",
